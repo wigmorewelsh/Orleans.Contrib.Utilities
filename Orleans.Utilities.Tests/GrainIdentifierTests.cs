@@ -12,6 +12,15 @@ public class GrainIdentifierTests : IClassFixture<UtilsSilo>
     {
         _factory = factory;
     }
+
+    [Fact]
+    public async Task GivenGrainWithIntegerKey_GrainId_ShouldMatchGrain() 
+    {
+        var grainFactory = _factory.Services.GetRequiredService<IGrainFactory>();
+        var grain = grainFactory.GetGrain<IIntergerGrain>(1);
+        var check = await grain.CheckGrainIdMatches();
+        check.ShouldBeTrue();
+    }
     
     [Fact]
     public async Task GivenGrainWithIntegerKey_KeyFromGrainIdentifer_ShouldMatchGrain()
