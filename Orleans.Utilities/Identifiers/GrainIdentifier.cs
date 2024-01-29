@@ -14,4 +14,5 @@ public class GrainIdentifier : IGrainIdentifier
     public Guid PrimaryKeyGuid => _grainRuntime.GrainId.GetGuidKey();
     public long PrimaryKeyLong => _grainRuntime.GrainId.GetIntegerKey();
     public string PrimaryKeyString => _grainRuntime.GrainId.Key.ToString();
+    public GrainId GrainId => _grainRuntime.GrainId;
 }

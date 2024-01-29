@@ -15,6 +15,11 @@ public class IntergerGrain : Grain, IIntergerGrain
     {
         return Task.FromResult(_grainIdentifier.PrimaryKeyLong);  
     }
+
+    public Task<bool> CheckGrainIdMatches()
+    {
+        return Task.FromResult(this.GetGrainId().Equals(_grainIdentifier.GrainId));
+    }
 }
 
 // grain with string key
