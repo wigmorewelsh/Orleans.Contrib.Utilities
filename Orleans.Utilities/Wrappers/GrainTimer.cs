@@ -27,7 +27,7 @@ public class GrainTimer : IGrainTimer
 }
 
 
-public static class ServiceCollectionIdentifierExtensions
+public static class ServiceCollectionTimerExtensions
 {
     public static IServiceCollection AddGrainTimer(this IServiceCollection services)
     {
