@@ -23,7 +23,8 @@ public class SiloHealthCheck : IHealthCheck
         {
             if (!participant.CheckHealth(lastChecked, out var reason))
             {
-                return Task.FromResult(HealthCheckResult.Degraded($"Silo health check participant '{participant.GetType().Name}' returned unhealthy: {reason}"));
+                var result = new HealthCheckResult(context.Registration.FailureStatus, $"Silo health check participant '{participant.GetType().Name}' returned unhealthy: {reason}");
+                return Task.FromResult(result);
             }
         }
 
