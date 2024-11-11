@@ -11,7 +11,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.9" />
-        <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.20" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
         <PackageReference Include="Microsoft.Orleans.Server" Version="7.2.1" />
         <PackageReference Include="Shouldly" Version="4.2.1" />
